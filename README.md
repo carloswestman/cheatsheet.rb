@@ -1,4 +1,4 @@
-# cheatsheet.rb
+# Cheatsheet.rb
 A bridged Ruby cheatsheet, to remember the tricks that you may forget
 
 Not everything that you can do in Ruby is considered good style. Functional style is highly favored, for instance the use of `each` or `map` instead of `while` or `for`. Piping functions is considered better and storing stage worst, though state should be stored in classes. Using a liner as Rubocop will help you writting code with better style quickly.
@@ -111,6 +111,13 @@ end
 ```
 
 ## Loops
+
+Iterate up and down with an index
+```
+array = [1, 2, 3]
+(0..(array.length - 1)).each { |index| puts index }
+(array.length - 1).downto(0).each { |index| puts index }
+```
 
 ```
 # `for` statements are rarely used in Ruby where `each` is favored for iterating over all arguments
@@ -228,4 +235,12 @@ m.values_at(:version, :module)
 m[1]                        # => "2.5.0"
 m.values_at(1, 2)           # => ["2.5.0", "MatchData"]
 
+```
+
+## http and json
+```
+require 'http'
+require 'JSON'
+HTTP.get('http://www.google.com')
+JSON.parse('{"a":1}')
 ```
